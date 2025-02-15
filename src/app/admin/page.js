@@ -28,7 +28,11 @@ function LoginPage({ setIsLogin }) {
             </h1>
             <form
               className="space-y-4 md:space-y-6"
-              onSubmit={() => {
+              onSubmit={(event) => {
+                event.preventDefault();
+
+                console.log(inputs);
+
                 if (inputs.id === "admin" && inputs.pw === "admin1101") {
                   setIsLogin(true);
                   window.localStorage.setItem("login", "1");
@@ -89,7 +93,11 @@ function Page() {
         setIsLogin(true);
       }
 
-      const { data, error } = await supabase.from("counsel").select("*");
+      const { data, error } = await supabase
+        .from("counsel")
+        .select("*")
+        .order("id", { ascending: false }); // ✅ 내림차순 (DESC)
+
       setList(data);
       setLoading(false);
     })();
