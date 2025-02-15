@@ -69,8 +69,14 @@ function Main() {
       return;
     }
 
-    console.log(data);
     alert("신청이 완료되었습니다.");
+
+    setFormData({
+      name: "",
+      contact: "",
+    });
+
+    setSelectedExchanges([]);
   };
 
   return (
