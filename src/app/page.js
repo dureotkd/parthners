@@ -1,11 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
+"use client";
 
 import dynamic from "next/dynamic";
 
 // 🔹 Dynamic import 설정
-const Main = dynamic(() => import("./main"), { ssr: true });
+const Main = dynamic(() => import("./main"), { ssr: false });
 
-export default async function Home() {
+export default function Home() {
   return (
     <div>
       <Main />
